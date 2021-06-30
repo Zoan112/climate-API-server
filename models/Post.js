@@ -3,11 +3,11 @@ const mongoose = require("mongoose");
 
 const PostSchema = mongoose.Schema({
     C: {
-        type: Boolean,
+        type: Number,
         required: true,
     },
     H:{
-        type: Boolean,
+        type: Number,
         required: true,
     }, 
     date:{
@@ -19,4 +19,4 @@ const PostSchema = mongoose.Schema({
 
 
 
-module.exports = mongoose.model('Post', PostSchema);
+module.exports = mongoose.model('living-room', PostSchema);

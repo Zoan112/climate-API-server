@@ -10,8 +10,8 @@ router.post('/', async (req, res)=>{
     console.log(req.body)
  
     const post = new Post({
-        title: req.body.title,
-        description: req.body.description
+        C: req.body.C,
+        H: req.body.H
     });
 try{
   const savePost = await post.save();
