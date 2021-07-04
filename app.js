@@ -12,10 +12,14 @@ const postsRoute = require("./Routes/write-to-db");
 app.use('/write-to-db', postsRoute);
 
 
+const getData = require("./Routes/get");
+app.use('/get', getData );
+
+
 mongoose.connect(process.env.DB_connection, {useNewUrlParser: true}, ()=>{
     console.log("DB connected")
 });
 //Connecting to DB
 
 //listning to server
-app.listen(3001)
+app.listen(3001, '192.168.8.248')
