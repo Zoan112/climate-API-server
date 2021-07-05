@@ -19,4 +19,4 @@ const PostSchema = mongoose.Schema({
 
 
 
-module.exports = mongoose.model('living-room', PostSchema);
+module.exports = mongoose.model('livingroom', PostSchema);

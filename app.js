@@ -15,6 +15,8 @@ app.use('/write-to-db', postsRoute);
 const getData = require("./Routes/get");
 app.use('/get', getData );
 
+const zones = require("./Routes/zones");
+app.use('/zones', zones)
 
 mongoose.connect(process.env.DB_connection, {useNewUrlParser: true}, ()=>{
     console.log("DB connected")
