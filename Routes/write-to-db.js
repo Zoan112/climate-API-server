@@ -36,7 +36,12 @@ try{
 router.post('/outside', async (req, res)=>{
     console.log('/outside:',req.body)
 
+
+let currentDate = new Date();
+let postDate = currentDate.toLocaleString("he-IL", {timeZone: "Asia/Jerusalem"});
+
     const outsideData = new outsidePost({
+        time: postDate,
         C: req.body.C,
         H: req.body.H
     });
