@@ -37,7 +37,7 @@ mongoose.connection.db.listCollections().toArray((err, names)=>{
     })
 
    
-    res.send(zones);
+    res.send('avaliable zones: ' + zones);
     console.log(zones);
 
    // res.send(names[0].name+names[1].name);

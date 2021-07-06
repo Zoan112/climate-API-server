@@ -3,14 +3,12 @@ const { json } = require("body-parser");
 const express = require("express");
 const router = express.Router();
 const Post = require("../models/Post");
+const outsidePost = require("../models/outside");
 
 
-
+//*Living room sensor *//
 router.post('/livingroom', async (req, res)=>{
-    console.log(req.body);
-    console.log('C:',req.body.C);
-    console.log('H',req.body.H);
-   // console.log(req);
+    console.log('/livingroom', req.body);
     let ts = Date.now();
 
 // timestamp in milliseconds
@@ -32,6 +30,24 @@ try{
 }
 
 });
+
+
+//*Outside sensor*//
+router.post('/outside', async (req, res)=>{
+    console.log('/outside:',req.body)
+
+    const outsideData = new outsidePost({
+        C: req.body.C,
+        H: req.body.H
+    });
+try{
+  const saveOutsideData= await outsideData.save();
+  console.log(saveOutsideData);
+  res.json(saveOutsideData);
+}catch(err){
+    res.json({meesage: err});
+}
+})
 
 
 module.exports = router;

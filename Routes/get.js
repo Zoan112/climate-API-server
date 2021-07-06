@@ -7,7 +7,7 @@ const Post = require("../models/Post");
 
 
 
-router.get('/',async (req, res)=>{
+router.get('/livingrooms',async (req, res)=>{
 //console.log("it works");
    // res.send("it works!!");
    // res.send(db.living-room.find().pretty());
