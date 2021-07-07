@@ -23,4 +23,4 @@ mongoose.connect(process.env.DB_connection, {useNewUrlParser: true}, ()=>{
 //Connecting to DB
 
 //listning to server
-app.listen(3001/*, '192.168.8.248'*/)
+app.listen(3001, '35.202.137.83'/*'192.168.8.248'*/)
