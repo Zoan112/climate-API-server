@@ -34,6 +34,7 @@ try{
 
 //*Outside sensor*//
 router.post('/outside', async (req, res)=>{
+    consolr.log("outside:")
     console.log('/outside:',req.body)
 
 

@@ -2,12 +2,11 @@ const { json } = require("body-parser");
 const express = require("express");
 const router = express.Router();
 const Post = require("../models/Post");
+const cors = require('cors')
 
 
 
-
-
-router.get('/livingrooms',async (req, res)=>{
+router.get('/livingrooms', cors() ,async (req, res)=>{
 
     try{ 
        const results = await Post.find();

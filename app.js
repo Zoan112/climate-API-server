@@ -6,6 +6,8 @@ require("dotenv/config")
 app.use(bodyParser.json());
 
 
+
+
 const postsRoute = require("./Routes/write-to-db");
 app.use('/write-to-db', postsRoute);
 
@@ -17,10 +19,10 @@ const zones = require("./Routes/zones");
 app.use('/zones', zones)
 
 
-mongoose.connect(process.env.DB_connection, {useNewUrlParser: true}, ()=>{
+mongoose.connect(process.env.DB_connection, {useNewUrlParser: true, useUnifiedTopology: true}, ()=>{
     console.log("DB connected")
 });
 //Connecting to DB
 
 //listning to server
-app.listen(3001, '35.202.137.83'/*'192.168.8.248'*/)
+app.listen(3001/*, '192.168.8.248'*/)
