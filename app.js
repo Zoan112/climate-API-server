@@ -33,7 +33,7 @@ const sslServer = https.createServer({
 },app)
 //listning to server
 
-sslServer.listen(3001, () => console.log("secure server"))
+sslServer.listen(3000, () => console.log("secure server"))
 
 ///app.listen(3001/*, '192.168.8.248'*/)
 

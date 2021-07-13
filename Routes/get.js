@@ -30,8 +30,9 @@ router.get('/livingrooms', cors() ,async (req, res)=>{
             res.json({meesage: err}); 
         }
     
-    
-        
         })
+
+
+   
     
 module.exports = router;
