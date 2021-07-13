@@ -5,6 +5,7 @@ const bodyParser = require("body-parser");
 const https = require("https");
 const path = require("path");
 const fs = require("fs");
+const cors = require('cors');
 
 require("dotenv/config")
 app.use(bodyParser.json());
@@ -19,7 +20,7 @@ app.use('/write-to-db', postsRoute);
 
 
 const zones = require("./Routes/zones");
-app.use('/zones', zones)
+app.use('/zones', zones, cors())
 
 
 mongoose.connect(process.env.DB_connection, {useNewUrlParser: true, useUnifiedTopology: true}, ()=>{

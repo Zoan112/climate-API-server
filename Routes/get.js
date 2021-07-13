@@ -2,11 +2,12 @@ const { json } = require("body-parser");
 const express = require("express");
 const router = express.Router();
 const Post = require("../models/Post");
-const cors = require('cors')
+//const cors = require('cors')
 
 
 
-router.get('/livingrooms', cors() ,async (req, res)=>{
+
+router.get('/livingrooms'/* ,cors()*/ ,async (req, res)=>{
 
     try{ 
        const results = await Post.find();
@@ -21,7 +22,7 @@ router.get('/livingrooms', cors() ,async (req, res)=>{
     })
 
 /*Return latest entry*/
-    router.get('/livingrooms%20-l', cors() , async (req, res)=>{
+    router.get('/livingrooms%20-l'/*, cors()*/ , async (req, res)=>{
         try{ 
            const results = await Post.find().limit(1).sort({$natural:-1}) ;
             res.json(results);

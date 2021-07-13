@@ -5,12 +5,10 @@ const Post = require("../models/Post");
 const outsidePost = require("../models/outside");
 const mongoose = require("mongoose");
 const cors = require('cors');
-
+console.log('zones',cors);
 
 /*Show all zones */
 router.get('/',async (req, res)=>{
-
-
 mongoose.connection.db.listCollections().toArray((err, names)=>{
     console.log(names[0].name);
     console.log(names[1].name);
@@ -20,7 +18,6 @@ mongoose.connection.db.listCollections().toArray((err, names)=>{
        zones.push(n.name);
     })
 
-   
     res.send('avaliable zones: ' + zones);
     console.log(zones);
 
@@ -55,7 +52,7 @@ router.get('/livingrooms',async (req, res)=>{
 
 
 
-    router.get('/outsides%20-l',cors(), async (req, res)=>{
+    router.get('/outsides%20-l',  cors() ,async (req, res)=>{
         console.log('outside -l')
         try{ 
            let results = await outsidePost.find().limit(1).sort({$natural:-1});
