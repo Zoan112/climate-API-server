@@ -37,4 +37,4 @@ app.use('/get', getData );*/
 
 
 const zones = require("./Routes/zones");
-app.use('/zones', zones, cors());
+app.use('/zones', zones);

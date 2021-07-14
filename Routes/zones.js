@@ -4,11 +4,12 @@ const router = express.Router();
 const Post = require("../models/Post");
 const outsidePost = require("../models/outside");
 const mongoose = require("mongoose");
+const cors =require("cors");
 
 
 
 /*Show all zones */
-router.get('/',async (req, res)=>{
+router.get('/', cors(),async (req, res)=>{
 mongoose.connection.db.listCollections().toArray((err, names)=>{
     console.log(names[0].name);
     console.log(names[1].name);
@@ -28,7 +29,7 @@ mongoose.connection.db.listCollections().toArray((err, names)=>{
 
 
 
-router.get('/livingrooms',async (req, res)=>{
+router.get('/livingrooms', cors(),async (req, res)=>{
     console.log('livingRooms')
     try{ 
        const results = await Post.find();
@@ -40,7 +41,7 @@ router.get('/livingrooms',async (req, res)=>{
     })
 
 
-    router.get('/outsides',async (req, res)=>{
+    router.get('/outsides',cors(),async (req, res)=>{
         console.log('outsides')
         try{ 
            let results = await outsidePost.find();
@@ -52,7 +53,7 @@ router.get('/livingrooms',async (req, res)=>{
 
 
 
-    router.get('/outsides%20-l' ,async (req, res)=>{
+    router.get('/outsides%20-l' ,cors(),async (req, res)=>{
         console.log('outside -l')
         try{ 
            let results = await outsidePost.find().limit(1).sort({$natural:-1});
@@ -66,7 +67,7 @@ router.get('/livingrooms',async (req, res)=>{
     });
 
 
-    router.get('/livingrooms%20-l' , async (req, res)=>{
+    router.get('/livingrooms%20-l',cors() , async (req, res)=>{
         try{ 
            const results = await Post.find().limit(1).sort({$natural:-1}) ;
             res.json(results);
