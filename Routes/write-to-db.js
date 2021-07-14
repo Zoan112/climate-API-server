@@ -56,15 +56,5 @@ try{
 })
 
 
-router.get('/livingrooms%20-l'/*, cors()*/ , async (req, res)=>{
-    try{ 
-       const results = await Post.find().limit(1).sort({$natural:-1}) ;
-        res.json(results);
-    }
-    catch(err){
-        res.json({meesage: err}); 
-    }
-
-    })
 
 module.exports = router;
