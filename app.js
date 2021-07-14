@@ -17,12 +17,6 @@ const postsRoute = require("./Routes/write-to-db");
 app.use('/write-to-db', postsRoute);
 
 
-
-
-const zones = require("./Routes/zones");
-app.use('/zones', zones, cors())
-
-
 mongoose.connect(process.env.DB_connection, {useNewUrlParser: true, useUnifiedTopology: true}, ()=>{
     console.log("DB connected")
 });
@@ -37,6 +31,10 @@ const sslServer = https.createServer({
 sslServer.listen(3000, () => console.log("secure server"))
 
 ///app.listen(3001/*, '192.168.8.248'*/)
-
+/*
 const getData = require("./Routes/get");
-app.use('/get', getData );
+app.use('/get', getData );*/
+
+
+const zones = require("./Routes/zones");
+app.use('/zones', zones, cors());

@@ -2,7 +2,7 @@ const { json } = require("body-parser");
 const express = require("express");
 const router = express.Router();
 const Post = require("../models/Post");
-//const cors = require('cors')
+//const cors = require('cors');
 
 
 
@@ -19,7 +19,7 @@ router.get('/livingrooms'/* ,cors()*/ ,async (req, res)=>{
 
 
     
-    })
+    });
 
 /*Return latest entry*/
     router.get('/livingrooms%20-l'/*, cors()*/ , async (req, res)=>{
@@ -31,9 +31,6 @@ router.get('/livingrooms'/* ,cors()*/ ,async (req, res)=>{
             res.json({meesage: err}); 
         }
     
-        })
+        });
 
 
-   
-    
-module.exports = router;
