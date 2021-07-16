@@ -50,10 +50,10 @@ router.get('/livingrooms', cors(),async (req, res)=>{
         catch(err){
             res.json({meesage: err}); 
         }
+    })
 
 
-
-    router.get('/outsides%20-l' ,cors(),async (req, res)=>{
+    router.get('/outsides%20-l',cors(),async (req, res)=>{
         console.log('outside -l')
         try{ 
            let results = await outsidePost.find().limit(1).sort({$natural:-1});
@@ -62,10 +62,9 @@ router.get('/livingrooms', cors(),async (req, res)=>{
         catch(err){
             res.json({meesage: err}); 
         }
-    
-        })
     });
 
+    
 
     router.get('/livingrooms%20-l',cors() , async (req, res)=>{
         try{ 
@@ -78,5 +77,7 @@ router.get('/livingrooms', cors(),async (req, res)=>{
     
         });
     
+        
+        
 
 module.exports = router;
