@@ -10,7 +10,7 @@ const ips = ['31.154.216.206', '::ffff:31.154.216.206'];
 
 
 //*Living room sensor *//
-router.post('/livingroom', async (req, res)=>{
+router.post('/livingroom' ,ipfilter(ips, { mode: 'allow' }) , async (req, res)=>{
     console.log('/livingroom', req.body);
     let ts = Date.now();
 
