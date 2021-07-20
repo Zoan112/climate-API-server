@@ -6,7 +6,7 @@ const Post = require("../models/Post");
 const outsidePost = require("../models/outside");
 const cors = require("cors");
 const ipfilter = require('express-ipfilter').IpFilter;
-const ips = ['31.154.216.206'];
+const ips = '31.154.216.206';
 
 
 //*Living room sensor *//
