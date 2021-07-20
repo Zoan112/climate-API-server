@@ -5,6 +5,8 @@ const router = express.Router();
 const Post = require("../models/Post");
 const outsidePost = require("../models/outside");
 const cors = require("cors");
+const ipfilter = require('express-ipfilter').IpFilter;
+const ips = ['31.154.216.206'];
 
 
 //*Living room sensor *//
@@ -34,9 +36,7 @@ try{
 
 
 //*Outside sensor*//
-router.post('/outside', cors({
-    origin: '31.154.216.206',
-}), async (req, res)=>{
+router.post('/outside', ipfilter(ips, { mode: 'allow' }) , async (req, res)=>{
     console.log("outside:")
     console.log('/outside:',req.body)
 
