@@ -12,16 +12,13 @@ const ips = ['31.154.216.206', '::ffff:31.154.216.206'];
 //*Living room sensor *//
 router.post('/livingroom' ,ipfilter(ips, { mode: 'allow' }) , async (req, res)=>{
     console.log('/livingroom', req.body);
-    let ts = Date.now();
 
-// timestamp in milliseconds
-console.log(ts);
-
-// timestamp in seconds
-console.log(Math.floor(ts/1000));
+    let currentDate = new Date();
+    let postDate = currentDate.toLocaleString("he-IL", {timeZone: "Asia/Jerusalem"});    
 
 
     const post = new Post({
+        time: postDate,
         C: req.body.C,
         H: req.body.H
     });

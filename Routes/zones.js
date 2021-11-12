@@ -28,7 +28,7 @@ mongoose.connection.db.listCollections().toArray((err, names)=>{
     
 
 
-
+//Show all living room 
 router.get('/livingrooms', cors(),async (req, res)=>{
     console.log('livingRooms')
     try{ 
@@ -40,7 +40,7 @@ router.get('/livingrooms', cors(),async (req, res)=>{
     }
     })
 
-
+//Show all outside
     router.get('/outsides',cors(),async (req, res)=>{
         console.log('outsides')
         try{ 
@@ -52,7 +52,7 @@ router.get('/livingrooms', cors(),async (req, res)=>{
         }
     })
 
-
+//Show latest outside
     router.get('/outsides%20-l',cors(),async (req, res)=>{
         console.log('outside -l')
         try{ 
@@ -65,7 +65,7 @@ router.get('/livingrooms', cors(),async (req, res)=>{
     });
 
     
-
+//Show latest living room 
     router.get('/livingrooms%20-l',cors() , async (req, res)=>{
         try{ 
            const results = await Post.find().limit(1).sort({$natural:-1}) ;
