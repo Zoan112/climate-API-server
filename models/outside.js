@@ -10,7 +10,8 @@ const PostSchema = mongoose.Schema({
     H:{
         type: Number,
         required: true,
-    },createdAt: {
+    },
+    createdAt: {
         type: Date,
         required: true,
         default: Date.now
