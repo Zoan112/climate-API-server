@@ -15,7 +15,7 @@ router.post('/livingroom' ,ipfilter(ips, { mode: 'allow' }) , async (req, res)=>
 
     let currentDate = new Date();
     let postDate = currentDate.toLocaleString("he-IL", {timeZone: "Asia/Jerusalem"});    
-
+    console.log('logdate', postDate )
 
     const post = new Post({
         time: postDate,
