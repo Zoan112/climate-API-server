@@ -24,6 +24,7 @@ router.post('/livingroom' ,ipfilter(ips, { mode: 'allow' }) , async (req, res)=>
     });
 try{
   const savePost = await post.save();
+  console.log(post);
   res.json(savePost);
 }catch(err){
     res.json({meesage: err});
